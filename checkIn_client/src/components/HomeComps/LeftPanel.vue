@@ -36,6 +36,9 @@
 .left-panel .gp_list {
     position: relative;
     height: calc(100% - 55px);
+    background-color: rgba(255, 255, 255, 0.312) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
 }
 
 .gp_list::-webkit-scrollbar {

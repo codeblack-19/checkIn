@@ -1,10 +1,20 @@
 <template>
     <div class="gp_info_bx px-3 py-2 d-flex">
-        <v-avatar color="grey-lighten-5" size="42" class="bg-grey-darken-1 mr-2">
-            <v-icon dark>
-                mdi-account-multiple
-            </v-icon>
-        </v-avatar>
+        <v-menu transition="scale-transition" >
+            <template v-slot:activator="{ props }">
+                <v-btn icon size="42" class="bg-grey-darken-1 mr-2" dark v-bind="props">
+                    <v-icon dark>
+                        mdi-account-multiple
+                    </v-icon>
+                </v-btn>
+            </template>
+        
+            <v-list>
+                <v-list-item v-for="n in 4" :key="n">
+                    <v-list-item-title>tab - {{ n }}</v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-menu>
         <div class="d-flex flex-column">
             <div class="d-flex">
                 <p class="text-subtitle-2 text-grey-lighten-4">

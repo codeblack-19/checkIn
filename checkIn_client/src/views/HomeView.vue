@@ -1,6 +1,4 @@
 <template>
-  <div class="chat-body">
-    <div class="cht-bx rounded-sm">
       <!-- header -->
       <NavBar />
 
@@ -12,8 +10,6 @@
         <!-- right panel -->
         <RightPanel />
       </v-row>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -24,17 +20,8 @@ import RightPanel from '../components/HomeComps/RightPanel.vue';
 </script>
 
 <style>
-.chat-body {
-  padding: 2%;
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.811)),
-    url(../assets/images/nicolas-houdayer-KdCjVKIX4gk-unsplash.jpg);
-  background-position: center;
-  background-size: cover;
-}
-
 .panel-bx{
-  height: calc(100vh - 130px);
+  height: calc(100vh - 95px);
 }
 
 .panel{
