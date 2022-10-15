@@ -1,5 +1,5 @@
 <template>
-    <v-col lg="9" class="right-panel panel pl-1">
+    <v-col lg="9" md="8" class="right-panel panel pl-1">
         <!-- panel header -->
         <RpHeader />
 
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div v-else class="input_bx d-flex pr-2 justify-center align-center bg-grey-darken-4">
-            <v-btn class="bg-grey-lighten-3">
+            <v-btn class="bg-grey-lighten-3" @click="isMember = true">
                 Click Here to Join Group
             </v-btn>
         </div>
@@ -79,6 +79,12 @@ const isMember = ref(false)
     position: relative;
     border: 1px solid rgba(128, 128, 128, 0.414);
     max-width: 70%;
+}
+
+@media (max-width: 768px){
+    .chat_msg{
+        max-width: 85%;
+    }
 }
 
 /* input area */

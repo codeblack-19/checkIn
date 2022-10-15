@@ -20,10 +20,10 @@
                 <p class="text-subtitle-2 text-grey-lighten-4">
                     Group Name
                 </p>
-                <v-icon color="grey-lighten-4">
+                <v-icon color="grey-lighten-4 d-none d-md-flex ">
                     mdi-circle-small
                 </v-icon>
-                <p class="text-body-1 text-yellow-darken-1">38 members</p>
+                <p class="text-body-1 text-yellow-darken-1 d-none d-md-flex">38 members</p>
             </div>
             <p class="text-caption text-grey-lighten-2">group description</p>
         </div>

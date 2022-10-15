@@ -21,7 +21,19 @@ import RightPanel from '../components/HomeComps/RightPanel.vue';
 
 <style>
 .panel-bx{
-  height: calc(100vh - 95px);
+  height: calc(100vh - 6em);
+}
+
+@media (max-width: 768px) {
+  .panel-bx {
+    height: calc(100vh - 5em);
+  }
+}
+
+@media (max-width: 375px) {
+  .panel-bx {
+    height: calc(100vh - 4.7em);
+  }
 }
 
 .panel{

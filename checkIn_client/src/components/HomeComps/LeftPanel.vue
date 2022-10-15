@@ -1,5 +1,5 @@
 <template>
-    <v-col lg="3" class="left-panel panel d-flex flex-column">
+    <v-col class="left-panel panel d-none d-md-flex flex-column">
         <div class="gp_head px-3 py-2 d-flex flex-column mb-1 align-center">
             <h5 class="text-grey-lighten-4 text-subtitle-2">Groups de'la checkIn</h5>
             <p class="text-grey-lighten-1 font-italic text-caption">Select a group to join or chat</p>

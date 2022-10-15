@@ -1,7 +1,7 @@
 <template>
     <v-toolbar dense class="glass-toolbar mb-1">
 
-        <v-app-bar-nav-icon color="grey-lighten-4" class="d-none d-md-flex d-lg-none"  @click="drawerOpen = !drawerOpen"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon color="grey-lighten-4" class="d-md-none"  @click="drawerOpen = !drawerOpen"></v-app-bar-nav-icon>
 
         <v-toolbar-title class="text-h5 font-weight-bold text-grey-lighten-4">
             checkIn
@@ -9,11 +9,13 @@
     
         <v-spacer></v-spacer>
     
-        <v-chip class="mx-4 pr-2 pl-1" color="grey-lighten-5" text-color="lime-darken-3">
+        <v-chip class="mx-4 pa-1" color="grey-lighten-5" text-color="lime-darken-3">
             <v-avatar  left>
                 <v-icon color="grey-lighten-4">mdi-account-circle</v-icon>
             </v-avatar>
-            danny Sunday
+            <span class="d-none d-md-flex ma-1">
+                danny Sunday
+            </span>
         </v-chip>
     </v-toolbar>
     <v-navigation-drawer v-model="drawerOpen" absolute temporary>
