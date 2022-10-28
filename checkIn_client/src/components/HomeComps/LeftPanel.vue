@@ -5,11 +5,31 @@
             <p class="text-grey-lighten-1 font-italic text-caption">Select a group to join or chat</p>
         </div>
 
-        <v-row no-gutters class="gp_list overflow-y-auto">
-            <v-col lg="12">
-                <v-card v-for="n in 0" :key="n" class="pa-2 mb-1" outlined tile>
-                    Group name
-                </v-card>
+        <v-row no-gutters align-content="start" class="gp_list overflow-y-auto pb-2">
+            <v-col lg="12" md="12" v-for="n in 3" :key="n">
+                <v-hover
+                    v-slot="{ isHovering, props }"
+                >
+                    <v-card 
+                        v-bind="props" 
+                        :color="isHovering ? 'grey-darken-1' : 'grey-lighten-1'" 
+                        class="pa-2 my-3 mx-2 d-flex group_card"
+                    >
+                        <v-avatar :color="isHovering ? 'grey-darken-2' : 'grey-darken-1'" size="48">
+                            <v-icon dark>
+                                mdi-account-multiple
+                            </v-icon>
+                        </v-avatar>
+                        <div class="ml-2">
+                            <p class="text-body-1 font-weight-medium">Group Name</p>
+                            <p class="text-body-2">
+                                Description
+                            </p>
+                        </div>
+                    </v-card>
+                </v-hover>
+                
+                <v-divider class="bg-grey-lighten-1 mx-2"></v-divider>
             </v-col>
         </v-row>
     </v-col>
@@ -51,5 +71,9 @@
     background: rgba(245, 245, 245, 0.564);
     background-clip: padding-box;
     border-radius: 100px;
+}
+
+.group_card{
+    cursor: pointer;
 }
 </style>

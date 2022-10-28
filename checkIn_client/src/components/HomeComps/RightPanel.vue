@@ -1,5 +1,8 @@
 <template>
-    <v-col lg="9" md="8" class="right-panel panel pl-1">
+    <v-col v-if="grp === false" lg="9" md="8" class="right-panel panel pl-1">
+        <NoGrpChosen />
+    </v-col>
+    <v-col v-else lg="9" md="8" class="right-panel panel pl-1">
         <!-- panel header -->
         <RpHeader />
 
@@ -50,8 +53,10 @@
 <script setup>
 import { ref } from 'vue';
 import RpHeader from './PanelComps/RpHeader.vue';
+import NoGrpChosen from './PanelComps/NoGrpChosen.vue';
 
 const isMember = ref(false)
+const grp = ref(true)
 
 </script>
 

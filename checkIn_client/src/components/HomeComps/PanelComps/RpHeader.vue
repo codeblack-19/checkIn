@@ -9,11 +9,26 @@
                 </v-btn>
             </template>
         
-            <v-list>
-                <v-list-item v-for="n in 4" :key="n">
-                    <v-list-item-title>tab - {{ n }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
+            <v-card class="py-3 mt-2 bg-grey-darken-2" min-width="190px">
+                <div class="mx-auto text-center">
+                    <v-avatar color="grey-darken-3" size="42">
+                        <span class="white--text text-h5">GM</span>
+                    </v-avatar>
+                    <h3>Group Name</h3>
+                    <p class="text-caption mt-1">
+                        Description
+                    </p>
+                    <v-divider class="my-3"></v-divider>
+                    <h4>Group Admin</h4>
+                    <p class="text-caption mt-1">
+                       39 members
+                    </p>
+                    <v-divider class="my-3"></v-divider>
+                    <v-btn rounded text class="bg-grey-lighten-3">
+                        Disconnect
+                    </v-btn>
+                </div>
+            </v-card>
         </v-menu>
         <div class="d-flex flex-column">
             <div class="d-flex">
@@ -28,10 +43,8 @@
             <p class="text-caption text-grey-lighten-2">group description</p>
         </div>
         <div class="ml-auto">
-            <v-btn icon size="42" class="bg-grey-darken-2">
-                <v-icon>
-                    mdi-dots-vertical
-                </v-icon>
+            <v-btn class="bg-grey-darken-2">
+                Leave
             </v-btn>
         </div>
     </div>
