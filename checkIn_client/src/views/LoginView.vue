@@ -12,6 +12,8 @@
                         <h3 class="text-h4 text-grey-lighten-1 text-center mb-3">Login</h3>
                     </div>
 
+                    <p v-if="error" class="text-subtitle-1 text-center text-red-lighten-3 mb-2">{{error}}</p>
+
                     <v-text-field v-model="username" :readonly="loading" :rules="[required]"
                         class="mb-2 text-grey-lighten-5" clearable label="Username">
                     </v-text-field>
@@ -39,10 +41,13 @@
 <script setup>
 import { ref } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
+import axios from 'axios'
+
 const form = ref(false)
 const username = ref(null)
 const password = ref(null)
 const loading = ref(false)
+const error = ref(null)
 const router = useRouter()
 
 const onSubmit = () => {
@@ -50,8 +55,27 @@ const onSubmit = () => {
 
     loading.value = true
 
-    setTimeout(() => { loading.value = false }, 2000)
-    router.replace({path: '/'})
+    axios({
+        method: 'POST',
+        url:  `${import.meta.env.VITE_API_URL}/auth/login`,
+        data: {
+            username: username.value,
+            password: password.value
+        },
+    }).then((res) => {
+        // set session storage here
+        console.log(res)
+
+        // router.replace({path: '/'})
+    }).catch((e) => {
+        if(e.response.data){
+            return error.value = e.response.data.detail
+        }
+    }).finally(() => {
+        loading.value = false
+    })
+
+    // setTimeout(() => { loading.value = false }, 2000)
 }
 
 const required = (v) => {

@@ -6,6 +6,8 @@
                     <img class="logo_gif_md" src="../assets/images/981-consultation-flat.gif" />
                     <h3 class="text-h4 text-grey-lighten-1 text-center mb-3">Sign Up</h3>
                 </div>
+
+                <p v-if="error" class="text-subtitle-1 text-center text-red-lighten-3 mb-2">{{error}}</p>
         
                 <v-text-field v-model="email" :readonly="loading" :rules="[required]" class="text-grey-lighten-5"
                     clearable label="Email">
@@ -40,12 +42,14 @@
 <script setup>
 import { ref } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
+import axios from 'axios';
 const form = ref(false)
 const email = ref(null)
 const username = ref(null)
 const password = ref(null)
 const cpassword = ref(null)
 const loading = ref(false)
+const error = ref('error')
 const router = useRouter()
 
 const onSubmit = () => {
@@ -53,8 +57,30 @@ const onSubmit = () => {
 
     loading.value = true
 
-    setTimeout(() => { loading.value = false }, 2000)
-    router.replace({path: '/'})
+    axios({
+        method: 'POST',
+        url:  `${import.meta.env.VITE_API_URL}/auth/register`,
+        data: {
+            username: username.value,
+            email: email.value,
+            password: password.value,
+            password2: cpassword.value
+        },
+    }).then((res) => {
+        // set session storage here
+        console.log(res)
+
+        // router.replace({path: '/'})
+    }).catch((e) => {
+        if(e.response.data){
+            return error.value = e.response.data.detail
+        }
+    }).finally(() => {
+        loading.value = false
+    })
+
+    // setTimeout(() => { loading.value = false }, 2000)
+    // router.replace({path: '/'})
 }
 
 const checkPass = () => {
