@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     default_error_messages = {
-        'no_active_account': 'Username or Password does not matched.'
+        'no_active_account': 'Invalid Credentials.'
     }
 
     @classmethod

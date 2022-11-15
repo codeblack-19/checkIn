@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# cors config {access origins}
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+]
+
 
 # Application definition
 
