@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'corsheaders',
+    'drf_yasg',
 
     # personal apps
     'api',
@@ -51,7 +52,6 @@ INSTALLED_APPS = [
     'chat_group',
     'chat_members',
     'chat'
-    
 ]
 
 MIDDLEWARE = [
@@ -98,7 +98,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'khodeblack19',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
